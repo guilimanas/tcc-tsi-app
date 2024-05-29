@@ -10,7 +10,7 @@ export class AppComponent {
     { title: 'Criar cartões', url: '/create', icon: 'create' },
     { title: 'Galeria de cartões', url: '/gallery', icon: 'grid' },
     { title: 'Instruções', url: '/instructions', icon: 'information-circle' },
-    /*{ title: 'Sobre nós', url: '/about', icon: 'person-circle' },*/
+    { title: 'Política de Privacidade', url: '/about', icon: 'person-circle' },
   ];
   constructor() {}
 }
