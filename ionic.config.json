@@ -1,0 +1,7 @@
+{
+  "name": "PECS",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

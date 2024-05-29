@@ -1,0 +1,183 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Cartões</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Cartões</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  
+  <ion-grid *ngIf="valueSelected == 1" class="margin-end">
+    <ion-row>
+      <ion-col class="ion-col" size="6" *ngFor="let c of daily; index as position">
+        <button class="botaoCartoes cartao" [id]="c.id" (click)="chooseCard(c.id,  valueSelected)">
+          <div class="ion-text-center body">
+            <ion-img [src]="c.webviewPath" class="img-cartao"></ion-img>
+          </div>
+          <div class="ion-text-center footer">
+            <ion-label class="ion-label label-legenda">{{ c.subtitle }}</ion-label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="valueSelected == 2" class="margin-end">
+    <ion-row>
+      <ion-col class="ion-col" size="6" *ngFor="let c of needs; index as position">
+        <button class="botaoCartoes cartao" [id]="c.id" (click)="chooseCard(c.id,  valueSelected)">
+          <div class="ion-text-center body">
+            <ion-img [src]="c.webviewPath" class="img-cartao"></ion-img>
+          </div>
+          <div class="ion-text-center footer">
+            <ion-label class="ion-label label-legenda">{{ c.subtitle }}</ion-label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="valueSelected == 3" class="margin-end">
+    <ion-row>
+      <ion-col class="ion-col" size="6" *ngFor="let c of family; index as position">
+        <button class="botaoCartoes cartao" [id]="c.id" (click)="chooseCard(c.id,  valueSelected)">
+          <div class="ion-text-center body">
+            <ion-img [src]="c.webviewPath" class="img-cartao"></ion-img>
+          </div>
+          <div class="ion-text-center footer">
+            <ion-label class="ion-label label-legenda">{{ c.subtitle }}</ion-label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="valueSelected == 4" class="margin-end">
+    <ion-row>
+      <ion-col class="ion-col" size="6" *ngFor="let c of emotions; index as position">
+        <button class="botaoCartoes cartao" [id]="c.id" (click)="chooseCard(c.id,  valueSelected)">
+          <div class="ion-text-center body">
+            <ion-img [src]="c.webviewPath" class="img-cartao"></ion-img>
+          </div>
+          <div class="ion-text-center footer">
+            <ion-label class="ion-label label-legenda">{{ c.subtitle }}</ion-label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
+  <ion-grid *ngIf="valueSelected == 5" class="margin-end">
+    <ion-row>
+      <ion-col class="ion-col" size="6" *ngFor="let c of drinks; index as position">
+        <button class="botaoCartoes cartao" [id]="c.id" (click)="chooseCard(c.id,  valueSelected)">
+          <div class="ion-text-center body">
+            <ion-img [src]="c.webviewPath" class="img-cartao"></ion-img>
+          </div>
+          <div class="ion-text-center footer">
+            <ion-label class="ion-label label-legenda">{{ c.subtitle }}</ion-label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
+  <ion-grid *ngIf="valueSelected == 6" class="margin-end">
+    <ion-row>
+      <ion-col class="ion-col" size="6" *ngFor="let c of foods; index as position">
+        <button class="botaoCartoes cartao" [id]="c.id" (click)="chooseCard(c.id,  valueSelected)">
+          <div class="ion-text-center body">
+            <ion-img [src]="c.webviewPath" class="img-cartao"></ion-img>
+          </div>
+          <div class="ion-text-center footer">
+            <ion-label class="ion-label label-legenda">{{ c.subtitle }}</ion-label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-grid *ngIf="valueSelected == 7" class="margin-end">
+    <ion-row>
+      <ion-col class="ion-col" size="6" *ngFor="let c of activities; index as position">
+        <button class="botaoCartoes cartao" [id]="c.id" (click)="chooseCard(c.id,  valueSelected)">
+          <div class="ion-text-center body">
+            <ion-img [src]="c.webviewPath" class="img-cartao"></ion-img>
+          </div>
+          <div class="ion-text-center footer">
+            <ion-label class="ion-label label-legenda">{{ c.subtitle }}</ion-label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="valueSelected == 8" class="margin-end">
+    <ion-row *ngIf="photoService.photos.length >= 1">
+      <ion-col class="ion-col" size="6" *ngFor="let c of myCards; index as position">
+        <button class="botaoCartoes cartao" [id]="c.id" (click)="chooseCard(c.id,  valueSelected)">
+          <div class="ion-text-center body">
+            <ion-img [src]="c.webviewPath" class="img-cartao"></ion-img>
+          </div>
+          <div class="ion-text-center footer">
+            <ion-label class="ion-label label-legenda">{{ c.subtitle }}</ion-label>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment [scrollable]="true" (ionChange)="segmentChanged($event)" value="1">
+      <ion-segment-button value="1">
+        <ion-label>COTIDIANO</ion-label>
+        <ion-icon name="earth"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="2">
+        <ion-label>NECESSIDADES</ion-label>
+        <ion-icon name="man"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="3">
+        <ion-label>FAMÍLIA</ion-label>
+        <ion-icon name="people"></ion-icon>
+      </ion-segment-button>
+    
+      <ion-segment-button value="4">
+        <ion-label>EMOÇÕES +</ion-label>
+        <ion-icon name="heart"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="5">
+        <ion-label>BEBIDAS</ion-label>
+        <ion-icon name="wine"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="6">
+        <ion-label>ALIMENTOS</ion-label>
+        <ion-icon name="pizza"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="7">
+        <ion-label>ATIVIDADES</ion-label>
+        <ion-icon name="bicycle"></ion-icon>
+      </ion-segment-button>
+
+      <ion-segment-button value="8">
+        <ion-label>MEUS</ion-label>
+        <ion-icon name="albums"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title>Editar cartão</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Editar cartão</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="ion-text-center ion-margin-top ion-margin-start ion-margin-end ion-margin-bottom margem-final" style="margin-top: 50px; margin-bottom: 50px;">
+    <ion-label color="primary">EDITAR LEGENDA</ion-label>
+  </div>
+  <ion-img [src]="this.photoService.photos[getPosition()].webviewPath" class="img-edit"></ion-img>
+
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <ion-item fill="outline" class="ion-margin-top ion-margin-start ion-margin-end ion-margin-bottom" style="margin-top: 50px;">
+      <ion-label>Legenda: </ion-label>
+      <ion-input type="text" [(ngModel)]="this.formData.value['t_subtitle_edit']" value="VALOR" formControlName="t_subtitle_edit" id="subtitle_edit" (ionChange)="enableButton()" clearInput></ion-input>
+    </ion-item>
+    <div class="ion-text-center ion-margin-top ion-margin-start ion-margin-end ion-margin-bottom" style="margin-top: 20px;">
+      <ion-button type="submit" [disabled]="disableButton">Salvar</ion-button>
+    </div>
+  </form>
+
+</ion-content>
