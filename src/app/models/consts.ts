@@ -70,7 +70,7 @@ export const listNeeds: Array<Lists> = [
     {webviewPath: 'assets/img/lavar-mãos.jpg', subtitle: 'quero lavar as mãos'},
     {webviewPath: 'assets/img/dormir.jpg', subtitle: 'quero dormir'},
     {webviewPath: 'assets/img/banho.jpg', subtitle: 'quero tomar banho'},
-    {webviewPath: 'assets/img/xixi.jpg', subtitle: 'priciso fazer xixi'},
+    {webviewPath: 'assets/img/xixi.jpg', subtitle: 'preciso fazer xixi'},
     {webviewPath: 'assets/img/cocô.jpg', subtitle: 'preciso fazer cocô'}, 
     {webviewPath: 'assets/img/dentes.jpg', subtitle: 'quero escovar os dentes'},
 ];
